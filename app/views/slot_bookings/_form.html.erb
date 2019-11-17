@@ -29,12 +29,18 @@
   <div class="row">
     <div class="col-sm-12">  
       <label>Slots</label>
-        <% @slots = Slot.all.where(active: true) %>
-        <% @slots.each do |slot| %>
-          <div class="col-sm-1">
-              <%= check_box_tag "slot_booking[slot_id][]", slot.id %>
-              <label for="slot<%= slot.id %>"><%= slot.start_time %>-<%= slot.end_time %></label>             
-          </div>
+        <% if current_user.user_role.try(:name) == "Organization" %> 
+            <% @slots = Slot.all %>
+        <% elsif current_user.user_role.try(:name) == "Agent" %>   
+            <% @slots = Slot.all.where(active: true) %>
+        <% end %>
+        <% if @slots.present? %>
+          <% @slots.each do |slot| %>
+            <div class="col-sm-1">
+                <%= check_box_tag "slot_booking[slot_id][]", slot.id %>
+                <label for="slot<%= slot.id %>"><%= slot.start_time %>-<%= slot.end_time %></label>             
+            </div>
+          <% end %>
         <% end %>
     </div>
   </div>

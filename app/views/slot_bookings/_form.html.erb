@@ -1,0 +1,46 @@
+<%= form_with(model: slot_booking, local: true) do |form| %>
+  <% if slot_booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(slot_booking.errors.count, "error") %> prohibited this slot_booking from being saved:</h2>
+
+      <ul>
+        <% slot_booking.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mobile %>
+    <%= form.text_field :mobile %>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">  
+      <label>Slots</label>
+        <% @slots = Slot.all.where(active: true) %>
+        <% @slots.each do |slot| %>
+          <div class="col-sm-1">
+              <%= check_box_tag "slot_booking[slot_id][]", slot.id %>
+              <label for="slot<%= slot.id %>"><%= slot.start_time %>-<%= slot.end_time %></label>             
+          </div>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="actions">
+        <button type="submit" class="subbtn" class="btn btn-success">Submit</button>
+  </div>
+<% end %>
+

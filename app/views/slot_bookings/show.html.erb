@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @slot_booking.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @slot_booking.user_id %>
+</p>
+
+<p>
+  <strong>Slot:</strong>
+  <%= @slot_booking.slot_id %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @slot_booking.email %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @slot_booking.mobile %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @slot_booking.active %>
+</p>
+
+<%= link_to 'Edit', edit_slot_booking_path(@slot_booking) %> |
+<%= link_to 'Back', slot_bookings_path %>

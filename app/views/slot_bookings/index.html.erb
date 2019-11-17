@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Slot Bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th>Slot</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @slot_bookings.each do |slot_booking| %>
+      <tr>
+        <td><%= slot_booking.name %></td>
+        <td><%= slot_booking.user_id %></td>
+        <td><%= slot_booking.slot_id %></td>
+        <td><%= slot_booking.email %></td>
+        <td><%= slot_booking.mobile %></td>
+        <td><%= slot_booking.active %></td>
+        <td><%= link_to 'Show', slot_booking %></td>
+        <td><%= link_to 'Edit', edit_slot_booking_path(slot_booking) %></td>
+        <td><%= link_to 'Destroy', slot_booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Slot Booking', new_slot_booking_path %>

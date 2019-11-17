@@ -4,7 +4,7 @@ class SlotBookingsController < ApplicationController
   # GET /slot_bookings
   # GET /slot_bookings.json
   def index
-    @slot_bookings = SlotBooking.all
+    @slot_bookings = SlotBooking.where(user_id: current_user.id)
   end
 
   # GET /slot_bookings/1

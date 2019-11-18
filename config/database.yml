@@ -15,9 +15,9 @@ development:
   database: advertisementdb
   pool: 7
   username: root
-  password: Lockated
+  password: Shubham@143
   host: localhost
-
+  socket: /var/run/mysqld/mysqld.sock
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -28,15 +28,17 @@ test:
   database: advertisementdb
   pool: 5
   username: root
-  password: Lockated
+  password: Shubham@143
   host: localhost
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: advertisementdb 
+  database: Shubham@143 
   pool: 5
   username: root
   password: Lockated
   host: localhost
+  socket: /var/run/mysqld/mysqld.sock
+

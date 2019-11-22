@@ -64,6 +64,6 @@ test:
 #
 production:
   <<: *default
-  database: webproject7_production
+  database: webproject7
   username: root
   password: <%= ENV['Shubham@143'] %>

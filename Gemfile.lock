@@ -62,8 +62,6 @@ GEM
     bindex (0.8.1)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    bootsnap (1.4.5)
-      msgpack (~> 1.0)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.29.0)
@@ -108,12 +106,11 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.13.0)
-    msgpack (1.3.1)
+    mysql2 (0.5.2)
     nio4r (2.5.2)
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
-    postgres-pr (0.7.0)
     public_suffix (4.0.1)
     puma (4.3.0)
       nio4r (~> 2.0)
@@ -217,13 +214,12 @@ PLATFORMS
 
 DEPENDENCIES
   binding_of_caller
-  bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
   devise
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
-  postgres-pr
+  mysql2
   puma (~> 4.1)
   rails (~> 6.0.1)
   sass-rails (>= 6)
